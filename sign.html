@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sign-style.css">
+    <title>Sign In</title>
+</head>
+<body>
+    <div class="hero">
+        <h1>Whale-Mail</h1>
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="buttton" class="toggle-btn" onclick="login()">Sign In</button>
+                <button type="buttton" class="toggle-btn" onclick="register()">Sign Up</button>
+            </div>
+            <form action="javascript:validation(mail,password)" id="login" class="input-group">
+                <input type="email" placeholder="Email" class="input-field" id="user-mail" required>
+                <input type="password" placeholder="Password" class="input-field" id="pswd" required>
+                <input type="checkbox" class="check-box"><span> Remember Password.</span>
+                <button type="submit" class="submit-btn" onclick="validation()">Continue</button>
+            </form>
+            <form id="register" class="input-group">
+                <input type="text" placeholder="First Name" class="input-field" required>
+                <input type="text" placeholder="Last Name" class="input-field" required>
+                <input type="text" placeholder="User Name" class="input-field" required>
+                <input type="password" placeholder="Password" class="input-field" required>
+                <input type="text" placeholder="Confirm Password" class="input-field" required>
+                <input type="checkbox" class="check-box" required><span> I agree to the terms & conditions.</span>
+                <button type="submit" class="submit-btn">Continue</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+
+        function register() {       
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+        }
+
+        // var a = "abcd@whale.com"; 
+        // var b = "AbcdEfgh123";
+        
+        
+        function validation(mail,password) {
+            var mail = document.getElementById("user-mail").value;
+            var password = document.getElementById("pswd").value;
+            if (mail=="abcd@whale.com" && password=="AbcdEfgh123"){
+                window.location.href="success.html";
+            }
+            else {
+                window.location.href="unsuccess.html"          
+            }
+        }
+    </script>
+    
+</body>
+</html>
